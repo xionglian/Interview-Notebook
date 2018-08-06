@@ -196,15 +196,27 @@ Executor 管理多个异步任务的执行，而无需程序员显示地管理�
 2. FixedThreadPool：所有任务只能使用固定大小的线程；
 3. SingleThreadExecutor：相当于大小为 1 的 FixedThreadPool。
 
-```java
-public static void main(String[] args) {
-    ExecutorService executorService = Executors.newCachedThreadPool();
-    for (int i = 0; i < 5; i++) {
-        executorService.execute(new MyRunnable());
-    }
-    executorService.shutdown();
-}
-```
+
+线程池之后的处理策略
+
+
+
+1. 如果当前线程池中的线程数目小于corePoolSize，则每来一个任务，就会创建一个线程去执行这个任务；
+2. 如果当前线程池中的线程数目>=corePoolSize，则每来一个任务，会尝试将其添加到任务缓存队列当中，若添加成功，则该任务会等待空闲线程将其取出去执行；若添加失败（一般来说是任务缓存队列已满），则会尝试创建新的线程去执行这个任务；
+3. 如果当前线程池中的线程数目达到maximumPoolSize，则会采取任务拒绝策略进行处理；
+4. 如果线程池中的线程数量大于 corePoolSize时，如果某线程空闲时间超过keepAliveTime，线程将被终止，直至线程池中的线程数目不大于corePoolSize；如果允许为核心池中的线程设置存活时间，那么核心池中的线程空闲时间超过keepAliveTime，线程也会被终止。
+
+[asdf ](https://www.cnblogs.com/absfree/p/5357118.html）
+
+		```java
+		public static void main(String[] args) {
+		    ExecutorService executorService = Executors.newCachedThreadPool();
+		    for (int i = 0; i < 5; i++) {
+		        executorService.execute(new MyRunnable());
+		    }
+		    executorService.shutdown();
+		}
+		```
 
 ## Daemon
 
