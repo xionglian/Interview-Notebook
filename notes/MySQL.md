@@ -477,14 +477,28 @@ MyISAM可以通过前缀压缩索引稍稍索引大小，默认只压缩字符�
 Explain 用来分析 SELECT 查询语句，开发人员可以通过分析 Explain 结果来优化查询语句。
 
 比较重要的字段有：
-
+- type:判断是否使用索引，性能ALL < index < range ~ index_merge < ref < eq_ref < const < system
 - select_type : 查询类型，有简单查询、联合查询、子查询等
 - key : 使用的索引
 - rows : 扫描的行数
 
 更多内容请参考：[MySQL 性能优化神器 Explain 使用分析](https://segmentfault.com/a/1190000008131735)
 
+
 ## 优化数据访问
+### 0.查询开销
+响应时间+扫描的行数+返回行数
+
+**响应时间** 可以分为服务时间和和排队时间。等待一般为I/O和锁等待。
+
+**扫描行数与返回行数** 理想情况扫描行数为返回行数
+
+**扫描行数与访问类型** EXPLAIN中type反应访问类型，有全表扫描，范围扫描，唯一索引查询、常数引用等。
+
+当有大量扫描而只返回少量数据时，优化点：
+- 使用覆盖索引，不用回表查询
+- 改变库表结构，如使用汇总表
+- 重构复杂的查询
 
 ### 1. 减少请求的数据量
 
@@ -521,33 +535,6 @@ do {
     "DELETE FROM messages WHERE create  < DATE_SUB(NOW(), INTERVAL 3 MONTH) LIMIT 10000")
 } while rows_affected > 0
 ```
-# 读写分离
-
-当读的压力太大的时候，可以将数据库配置成集群，分为master和slave。master用于写，slave用于读。master和slave通过binlog同步。
-
-**优点**
-
-- 避免单点故障
-
-- 负载均衡，读能力水平扩展
-
-
-**挑战**
-
-- **sql类型判断** 写走主库，读走从库
-
-- **主从延迟问题** 强一致场景，直接读写主库
-
-- **事务问题** 读写分离，造成分布式事务，效率低下。主流做法，所有sql都走主库
-
-- **高可用问题**
-	
-	- **新增slave节点** 新增slave节点，应用需要能感知，并将读请求转发到新的slave
-	
-	- slave宕机或下线 对该slave请求进行隔离，请求转发到正常的slave。
-	
-	- master宕机
-		
 
 ### 2. 分解大连接查询
 
@@ -560,7 +547,7 @@ do {
 - 查询本身效率也可能会有所提升。例如下面的例子中，使用 IN() 代替连接查询，可以让 MySQL 按照 ID 顺序进行查询，这可能比随机的连接要更高效。
 
 ```sql
-SELECT * FROM tab
+SELECT * FROM tag
 JOIN tag_post ON tag_post.tag_id=tag.id
 JOIN post ON tag_post.post_id=post.id
 WHERE tag.tag='mysql';
@@ -596,6 +583,32 @@ SELECT * FROM post WHERE post.id IN (123,456,567,9098,8904);
 - 范围：可以是 ID 范围也可以是时间范围
 - 映射表：使用单独的一个数据库来存储映射关系
 
+# 读写分离
+
+当读的压力太大的时候，可以将数据库配置成集群，分为master和slave。master用于写，slave用于读。master和slave通过binlog同步。
+
+**优点**
+
+- 避免单点故障
+
+- 负载均衡，读能力水平扩展
+
+
+**挑战**
+
+- **sql类型判断** 写走主库，读走从库
+
+- **主从延迟问题** 强一致场景，直接读写主库
+
+- **事务问题** 读写分离，造成分布式事务，效率低下。主流做法，所有sql都走主库
+
+- **高可用问题**
+	
+	- **新增slave节点** 新增slave节点，应用需要能感知，并将读请求转发到新的slave
+	
+	- slave宕机或下线 对该slave请求进行隔离，请求转发到正常的slave。
+	
+	- master宕机
 ## Sharding 存在的问题及解决方案
 
 ### 1. 事务问题
