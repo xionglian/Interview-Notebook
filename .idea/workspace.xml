@@ -2,8 +2,21 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8952bdde-dcea-42a9-8b24-a055b915d724" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/other/leetcode 总结.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/notes/Java 容器.md" beforeDir="false" afterPath="$PROJECT_DIR$/notes/Java 容器.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/notes/Leetcode 题解.md" beforeDir="false" afterPath="$PROJECT_DIR$/notes/Leetcode 题解.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/notes/Linux.md" beforeDir="false" afterPath="$PROJECT_DIR$/notes/Linux.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/notes/MySQL.md" beforeDir="false" afterPath="$PROJECT_DIR$/notes/MySQL.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/notes/Redis.md" beforeDir="false" afterPath="$PROJECT_DIR$/notes/Redis.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/notes/SQL.md" beforeDir="false" afterPath="$PROJECT_DIR$/notes/SQL.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/notes/数据库系统原理.md" beforeDir="false" afterPath="$PROJECT_DIR$/notes/数据库系统原理.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/notes/正则表达式.md" beforeDir="false" afterPath="$PROJECT_DIR$/notes/正则表达式.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/notes/消息队列.md" beforeDir="false" afterPath="$PROJECT_DIR$/notes/消息队列.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/notes/缓存.md" beforeDir="false" afterPath="$PROJECT_DIR$/notes/缓存.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/notes/计算机网络.md" beforeDir="false" afterPath="$PROJECT_DIR$/notes/计算机网络.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/other/group.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/other/group.jpg" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -14,22 +27,12 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Leetcode-Database 题解.md" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/notes/Leetcode-Database 题解.md">
-          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-            <state split_layout="SPLIT">
-              <first_editor />
-              <second_editor />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MySQL.md" pinned="false" current-in-tab="false">
+      <file leaf-file-name="MySQL.md" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/notes/MySQL.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="207">
-                <caret line="480" selection-start-line="480" selection-end-line="480" />
+              <first_editor relative-caret-position="285">
+                <caret line="307" column="32" selection-start-line="307" selection-start-column="32" selection-end-line="307" selection-end-column="32" />
               </first_editor>
               <second_editor />
             </state>
@@ -40,7 +43,7 @@
         <entry file="file://$PROJECT_DIR$/notes/Redis.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="133">
+              <first_editor relative-caret-position="1083">
                 <caret line="57" column="22" lean-forward="true" selection-start-line="57" selection-start-column="22" selection-end-line="57" selection-end-column="22" />
               </first_editor>
               <second_editor />
@@ -52,8 +55,8 @@
         <entry file="file://$PROJECT_DIR$/notes/数据库系统原理.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor>
-                <caret line="200" column="12" lean-forward="true" selection-start-line="200" selection-start-column="12" selection-end-line="200" selection-end-column="12" />
+              <first_editor relative-caret-position="3819">
+                <caret line="201" column="12" lean-forward="true" selection-start-line="201" selection-start-column="12" selection-end-line="201" selection-end-column="12" />
               </first_editor>
               <second_editor />
             </state>
@@ -75,19 +78,19 @@
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
               <first_editor relative-caret-position="304">
-                <caret line="16" column="30" lean-forward="true" selection-start-line="16" selection-start-column="30" selection-end-line="16" selection-end-column="30" />
+                <caret line="16" column="30" selection-start-line="16" selection-start-column="30" selection-end-line="16" selection-end-column="30" />
               </first_editor>
               <second_editor />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="牛客网java题目总结.md" pinned="false" current-in-tab="true">
+      <file leaf-file-name="牛客网java题目总结.md" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/notes/牛客网java题目总结.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="437">
-                <caret line="23" column="28" lean-forward="true" selection-start-line="23" selection-start-column="28" selection-end-line="23" selection-end-column="28" />
+              <first_editor relative-caret-position="361">
+                <caret line="19" column="28" lean-forward="true" selection-start-line="19" selection-start-column="28" selection-end-line="19" selection-end-column="28" />
               </first_editor>
               <second_editor />
             </state>
@@ -108,19 +111,9 @@
         <entry file="file://$PROJECT_DIR$/notes/分布式锁.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="773">
+              <first_editor relative-caret-position="4047">
                 <caret line="213" lean-forward="true" selection-start-line="213" selection-end-line="213" />
               </first_editor>
-              <second_editor />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Leetcode 题解.md" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/notes/Leetcode 题解.md">
-          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-            <state split_layout="SPLIT">
-              <first_editor />
               <second_editor />
             </state>
           </provider>
@@ -130,9 +123,9 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>HEAD</find>
       <find>head</find>
       <find>InnterviewNotes/blob/master/notes</find>
+      <find>HEAD</find>
     </findStrings>
     <replaceStrings>
       <replace>Interview-Notebook/blob/master/notes</replace>
@@ -149,9 +142,9 @@
         <option value="$PROJECT_DIR$/notes/Git.md" />
         <option value="$PROJECT_DIR$/notes/分布式锁.md" />
         <option value="$PROJECT_DIR$/README.md" />
-        <option value="$PROJECT_DIR$/notes/MySQL.md" />
         <option value="$PROJECT_DIR$/notes/Redis.md" />
         <option value="$PROJECT_DIR$/notes/数据库系统原理.md" />
+        <option value="$PROJECT_DIR$/notes/MySQL.md" />
       </list>
     </option>
   </component>
@@ -173,7 +166,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -191,10 +183,12 @@
         </subPane>
       </pane>
       <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="AndroidView" />
     </panes>
   </component>
   <component name="PropertiesComponent">
+    <property name="SearchEverywhereHistoryKey" value="HEAD&#9;null&#9;null" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
@@ -273,11 +267,12 @@
       <workItem from="1533525506598" duration="2837000" />
       <workItem from="1533536959147" duration="11743000" />
       <workItem from="1533606839092" duration="18102000" />
+      <workItem from="1533777877708" duration="493000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="32682000" />
+    <option name="totallyTimeSpent" value="33175000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1696" height="1026" extended-state="6" />
@@ -292,10 +287,11 @@
       <window_info anchor="bottom" id="Database Changes" order="14" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="11" />
       <window_info anchor="bottom" id="Run" order="6" weight="0.24251969" />
-      <window_info anchor="bottom" id="Terminal" order="12" visible="true" weight="0.32930845" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="12" visible="true" weight="0.32930845" />
       <window_info id="Designer" order="4" />
-      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.17380953" />
+      <window_info content_ui="combo" id="Project" order="1" visible="true" weight="0.17380953" />
       <window_info anchor="right" id="Database" order="6" />
+      <window_info anchor="bottom" id="Find" order="5" weight="0.43464568" />
       <window_info id="Structure" order="2" side_tool="true" weight="0.25" />
       <window_info id="UI Designer" order="5" />
       <window_info id="Favorites" order="7" side_tool="true" />
@@ -318,7 +314,6 @@
       <window_info anchor="right" id="Theme Preview" order="9" />
       <window_info anchor="bottom" id="Inspection" order="9" weight="0.4" />
       <window_info anchor="right" id="Coverage" order="0" side_tool="true" visible="true" weight="0.26281112" />
-      <window_info anchor="bottom" id="Find" order="5" weight="0.43464568" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -328,6 +323,98 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/notes/Leetcode-Database 题解.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor />
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/notes/MySQL.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="9120">
+            <caret line="480" selection-start-line="480" selection-end-line="480" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/notes/Redis.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="1083">
+            <caret line="57" column="22" lean-forward="true" selection-start-line="57" selection-start-column="22" selection-end-line="57" selection-end-column="22" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/notes/数据库系统原理.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="3800">
+            <caret line="200" column="12" lean-forward="true" selection-start-line="200" selection-start-column="12" selection-end-line="200" selection-end-column="12" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/notes/算法.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor />
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/notes/剑指 offer 题解.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="304">
+            <caret line="16" column="30" lean-forward="true" selection-start-line="16" selection-start-column="30" selection-end-line="16" selection-end-column="30" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/notes/Linux.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor />
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/notes/分布式锁.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="4047">
+            <caret line="213" lean-forward="true" selection-start-line="213" selection-end-line="213" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/notes/Leetcode 题解.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor />
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/notes/牛客网java题目总结.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="437">
+            <caret line="23" column="28" lean-forward="true" selection-start-line="23" selection-start-column="28" selection-end-line="23" selection-end-column="28" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/notes/Leetcode-Database 题解.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
@@ -582,20 +669,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/notes/MySQL.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="207">
-            <caret line="480" selection-start-line="480" selection-end-line="480" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/notes/分布式锁.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="773">
+          <first_editor relative-caret-position="4047">
             <caret line="213" lean-forward="true" selection-start-line="213" selection-end-line="213" />
           </first_editor>
           <second_editor />
@@ -605,7 +682,7 @@
     <entry file="file://$PROJECT_DIR$/notes/Redis.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="133">
+          <first_editor relative-caret-position="1083">
             <caret line="57" column="22" lean-forward="true" selection-start-line="57" selection-start-column="22" selection-end-line="57" selection-end-column="22" />
           </first_editor>
           <second_editor />
@@ -615,8 +692,8 @@
     <entry file="file://$PROJECT_DIR$/notes/数据库系统原理.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor>
-            <caret line="200" column="12" lean-forward="true" selection-start-line="200" selection-start-column="12" selection-end-line="200" selection-end-column="12" />
+          <first_editor relative-caret-position="3819">
+            <caret line="201" column="12" lean-forward="true" selection-start-line="201" selection-start-column="12" selection-end-line="201" selection-end-column="12" />
           </first_editor>
           <second_editor />
         </state>
@@ -634,17 +711,41 @@
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
           <first_editor relative-caret-position="304">
-            <caret line="16" column="30" lean-forward="true" selection-start-line="16" selection-start-column="30" selection-end-line="16" selection-end-column="30" />
+            <caret line="16" column="30" selection-start-line="16" selection-start-column="30" selection-end-line="16" selection-end-column="30" />
           </first_editor>
           <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external/lib.dom.d.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="15268" column="13" selection-start-line="15268" selection-start-column="13" selection-end-line="15268" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external/react.d.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="3637" column="8" selection-start-line="3637" selection-start-column="8" selection-end-line="3637" selection-end-column="8" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/notes/牛客网java题目总结.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="437">
-            <caret line="23" column="28" lean-forward="true" selection-start-line="23" selection-start-column="28" selection-end-line="23" selection-end-column="28" />
+          <first_editor relative-caret-position="361">
+            <caret line="19" column="28" lean-forward="true" selection-start-line="19" selection-start-column="28" selection-end-line="19" selection-end-column="28" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/notes/MySQL.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="285">
+            <caret line="307" column="32" selection-start-line="307" selection-start-column="32" selection-end-line="307" selection-end-column="32" />
           </first_editor>
           <second_editor />
         </state>
