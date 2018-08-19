@@ -1,43 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="8952bdde-dcea-42a9-8b24-a055b915d724" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/other/group.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pics/0157d362-98dd-4e51-ac26-00ecb76beb3e.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pics/1a2f2998-d0da-41c8-8222-1fd95083a66b.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pics/220790c6-4377-4a2e-8686-58398afc8a18.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pics/2a8e1442-2381-4439-a83f-0312c8678b1f.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pics/37e79a32-95a9-4503-bdb1-159527e628b8.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pics/685a692f-8f76-4cac-baac-b68e2df9a30f.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pics/864bfa7d-1149-420c-a752-f9b3d4e782ec.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pics/VP4n3i8m34Ntd28NQ4_0KCJ2q044Oez.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pics/f8047846-efd4-42be-b6b7-27a7c4998b51.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pics/urlnuri.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/notes/HTTP.md" beforeDir="false" afterPath="$PROJECT_DIR$/notes/HTTP.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/notes/Java IO.md" beforeDir="false" afterPath="$PROJECT_DIR$/notes/Java IO.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/notes/Java 基础.md" beforeDir="false" afterPath="$PROJECT_DIR$/notes/Java 基础.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/notes/Java 容器.md" beforeDir="false" afterPath="$PROJECT_DIR$/notes/Java 容器.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/notes/Java 并发.md" beforeDir="false" afterPath="$PROJECT_DIR$/notes/Java 并发.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/notes/Java 虚拟机.md" beforeDir="false" afterPath="$PROJECT_DIR$/notes/Java 虚拟机.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/notes/Leetcode 题解.md" beforeDir="false" afterPath="$PROJECT_DIR$/notes/Leetcode 题解.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/notes/Leetcode-Database 题解.md" beforeDir="false" afterPath="$PROJECT_DIR$/notes/Leetcode-Database 题解.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/notes/Linux.md" beforeDir="false" afterPath="$PROJECT_DIR$/notes/Linux.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/notes/MySQL.md" beforeDir="false" afterPath="$PROJECT_DIR$/notes/MySQL.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/notes/Redis.md" beforeDir="false" afterPath="$PROJECT_DIR$/notes/Redis.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/notes/剑指 offer 题解.md" beforeDir="false" afterPath="$PROJECT_DIR$/notes/剑指 offer 题解.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/notes/攻击技术.md" beforeDir="false" afterPath="$PROJECT_DIR$/notes/攻击技术.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/notes/数据库系统原理.md" beforeDir="false" afterPath="$PROJECT_DIR$/notes/数据库系统原理.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/notes/消息队列.md" beforeDir="false" afterPath="$PROJECT_DIR$/notes/消息队列.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/notes/算法.md" beforeDir="false" afterPath="$PROJECT_DIR$/notes/算法.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/notes/系统设计基础.md" beforeDir="false" afterPath="$PROJECT_DIR$/notes/系统设计基础.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/notes/缓存.md" beforeDir="false" afterPath="$PROJECT_DIR$/notes/缓存.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/notes/设计模式.md" beforeDir="false" afterPath="$PROJECT_DIR$/notes/设计模式.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/notes/集群.md" beforeDir="false" afterPath="$PROJECT_DIR$/notes/集群.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/notes/面向对象思想.md" beforeDir="false" afterPath="$PROJECT_DIR$/notes/面向对象思想.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/other/Group.md" beforeDir="false" afterPath="$PROJECT_DIR$/other/Group.md" afterDir="false" />
-    </list>
+    <list default="true" id="8952bdde-dcea-42a9-8b24-a055b915d724" name="Default" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -86,9 +50,9 @@
       <file leaf-file-name="数据库系统原理.md" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/notes/数据库系统原理.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-            <state split_layout="SPLIT">
-              <first_editor relative-caret-position="190">
-                <caret line="153" lean-forward="true" selection-start-line="153" selection-end-line="153" />
+            <state split_layout="SECOND">
+              <first_editor relative-caret-position="-418">
+                <caret line="156" column="20" lean-forward="true" selection-start-line="156" selection-start-column="20" selection-end-line="156" selection-end-column="20" />
               </first_editor>
               <second_editor />
             </state>
@@ -189,7 +153,7 @@
   <component name="NodePackageJsonFileManager">
     <packageJsonPaths />
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="-8" />
     <option name="y" value="-8" />
     <option name="width" value="1366" />
@@ -304,16 +268,15 @@
       <workItem from="1533777877708" duration="3128000" />
       <workItem from="1533927199912" duration="939000" />
       <workItem from="1533999542505" duration="7000" />
-      <workItem from="1534677263805" duration="446000" />
+      <workItem from="1534677263805" duration="1146000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="37202000" />
+    <option name="totallyTimeSpent" value="37902000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="true" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="7" />
     <layout>
       <window_info anchor="right" id="Palette" order="10" />
       <window_info anchor="bottom" id="TODO" order="10" />
@@ -514,9 +477,9 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/notes/数据库系统原理.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="190">
-            <caret line="153" lean-forward="true" selection-start-line="153" selection-end-line="153" />
+        <state split_layout="SECOND">
+          <first_editor relative-caret-position="-418">
+            <caret line="156" column="20" lean-forward="true" selection-start-line="156" selection-start-column="20" selection-end-line="156" selection-end-column="20" />
           </first_editor>
           <second_editor />
         </state>
