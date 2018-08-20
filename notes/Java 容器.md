@@ -512,6 +512,7 @@ map.put("K3", "V3");
 
 ### 3. put 操作
 
+
 ```java
 public V put(K key, V value) {
     if (table == EMPTY_TABLE) {
@@ -601,27 +602,12 @@ int i = indexFor(hash, table.length);
 （一）计算 hash 值
 
 ```java
-final int hash(Object k) {
-    int h = hashSeed;
-    if (0 != h && k instanceof String) {
-        return sun.misc.Hashing.stringHash32((String) k);
+static final int hash(Object key) {
+        int h;
+        return (key == null) ? 0 : (h = key.hashCode()) ^ (h >>> 16);
     }
-
-    h ^= k.hashCode();
-
-    // This function ensures that hashCodes that differ only by
-    // constant multiples at each bit position have a bounded
-    // number of collisions (approximately 8 at default load factor).
-    h ^= (h >>> 20) ^ (h >>> 12);
-    return h ^ (h >>> 7) ^ (h >>> 4);
-}
 ```
 
-```java
-public final int hashCode() {
-    return Objects.hashCode(key) ^ Objects.hashCode(value);
-}
-```
 
 （二）取模
 
@@ -788,7 +774,7 @@ static final int tableSizeFor(int cap) {
 
 ### 8. 链表转红黑树
 
-从 JDK 1.8 开始，一个桶存储的链表长度大于 8 时会将链表转换为红黑树。
+从 JDK 1.8 开始，当table的容量大于64时，一个桶存储的链表长度大于 8 时会将链表转换为红黑树。当链表长度小于6时，变成链表。小于64只会resize一次。
 
 ### 9. 与 HashTable 的比较
 
