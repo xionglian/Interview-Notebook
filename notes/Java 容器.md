@@ -775,6 +775,8 @@ static final int tableSizeFor(int cap) {
 ### 8. 链表转红黑树
 
 从 JDK 1.8 开始，当table的容量大于64时，一个桶存储的链表长度大于 8 时会将链表转换为红黑树。当链表长度小于6时，变成链表。小于64只会resize一次。
+<div align="center"> <img src="../pics//249993-20170725160254943-1515467235.png" width="800"/> </div><br>
+
 
 ### 9. 与 HashTable 的比较
 
@@ -909,9 +911,115 @@ public int size() {
 
 JDK 1.7 使用分段锁机制来实现并发更新操作，核心类为 Segment，它继承自重入锁 ReentrantLock，并发度与 Segment 数量相等。
 
-JDK 1.8 使用了 CAS 操作来支持更高的并发度，在 CAS 操作失败时使用内置锁 synchronized。
+JDK 1.8 使用了 CAS 操作来支持更高的并发度，在 CAS 操作失败时使用内置锁 synchronized。默认初始化16个桶，每个桶拥有一把锁。
 
 并且 JDK 1.8 的实现也在链表过长时会转换为红黑树。
+
+put实现并发插入或更新操作： 
+
+- 当前bucket为空时，使用CAS操作，将Node放入对应的bucket中。 
+- 出现hash冲突，则采用synchronized关键字。倘若当前hash对应的节点是链表的头节点，遍历链表，若找到对应的node节点，则修改node节点的val，否则在链表末尾添加node节点；倘若当前节点是红黑树的根节点，在树结构上遍历元素，更新或增加节点。 
+- 倘若当前map正在扩容f.hash == MOVED， 则跟其他线程一起进行扩容
+```java
+final V putVal(K key, V value, boolean onlyIfAbsent) {
+        if (key == null || value == null) throw new NullPointerException(); // 键或值为空，抛出异常
+        // 键的hash值经过计算获得hash值
+        int hash = spread(key.hashCode());
+        int binCount = 0;
+        for (Node<K,V>[] tab = table;;) { // 无限循环
+            Node<K,V> f; int n, i, fh;
+            if (tab == null || (n = tab.length) == 0) // 表为空或者表的长度为0
+                // 初始化表
+                tab = initTable();
+            else if ((f = tabAt(tab, i = (n - 1) & hash)) == null) { // 表不为空并且表的长度大于0，并且该桶不为空
+                if (casTabAt(tab, i, null,
+                             new Node<K,V>(hash, key, value, null))) // 比较并且交换值，如tab的第i项为空则用新生成的node替换
+                    break;                   // no lock when adding to empty bin
+            }
+            else if ((fh = f.hash) == MOVED) // 该结点的hash值为MOVED
+                // 进行结点的转移（在扩容的过程中）
+                tab = helpTransfer(tab, f);
+            else {
+                V oldVal = null;
+                synchronized (f) { // 加锁同步
+                    if (tabAt(tab, i) == f) { // 找到table表下标为i的节点
+                        if (fh >= 0) { // 该table表中该结点的hash值大于0
+                            // binCount赋值为1
+                            binCount = 1;
+                            for (Node<K,V> e = f;; ++binCount) { // 无限循环
+                                K ek;
+                                if (e.hash == hash &&
+                                    ((ek = e.key) == key ||
+                                     (ek != null && key.equals(ek)))) { // 结点的hash值相等并且key也相等
+                                    // 保存该结点的val值
+                                    oldVal = e.val;
+                                    if (!onlyIfAbsent) // 进行判断
+                                        // 将指定的value保存至结点，即进行了结点值的更新
+                                        e.val = value;
+                                    break;
+                                }
+                                // 保存当前结点
+                                Node<K,V> pred = e;
+                                if ((e = e.next) == null) { // 当前结点的下一个结点为空，即为最后一个结点
+                                    // 新生一个结点并且赋值给next域
+                                    pred.next = new Node<K,V>(hash, key,
+                                                              value, null);
+                                    // 退出循环
+                                    break;
+                                }
+                            }
+                        }
+                        else if (f instanceof TreeBin) { // 结点为红黑树结点类型
+                            Node<K,V> p;
+                            // binCount赋值为2
+                            binCount = 2;
+                            if ((p = ((TreeBin<K,V>)f).putTreeVal(hash, key,
+                                                           value)) != null) { // 将hash、key、value放入红黑树
+                                // 保存结点的val
+                                oldVal = p.val;
+                                if (!onlyIfAbsent) // 判断
+                                    // 赋值结点value值
+                                    p.val = value;
+                            }
+                        }
+                    }
+                }
+                if (binCount != 0) { // binCount不为0
+                    if (binCount >= TREEIFY_THRESHOLD) // 如果binCount大于等于转化为红黑树的阈值
+                        // 进行转化
+                        treeifyBin(tab, i);
+                    if (oldVal != null) // 旧值不为空
+                        // 返回旧值
+                        return oldVal;
+                    break;
+                }
+            }
+        }
+        // 增加binCount的数量
+        addCount(1L, binCount);
+        return null;
+    }
+```
+
+　说明：put函数底层调用了putVal进行数据的插入，对于putVal函数的流程大体如下。
+
+　　① 判断存储的key、value是否为空，若为空，则抛出异常，否则，进入步骤②
+
+　　② 计算key的hash值，随后进入无限循环，该无限循环可以确保成功插入数据，若table表为空或者长度为0，则初始化table表，否则，进入步骤③
+
+　　③ 根据key的hash值取出table表中的结点元素，若取出的结点为空（该桶为空），则使用CAS将key、value、hash值生成的结点放入桶中。否则，进入步骤④
+
+　　④ 若该结点的的hash值为MOVED，则对该桶中的结点进行转移，否则，进入步骤⑤
+
+　　⑤ 对桶中的第一个结点（即table表中的结点）进行加锁，对该桶进行遍历，桶中的结点的hash值与key值与给定的hash值和key值相等，则根据标识选择是否进行更新操作（用给定的value值
+
+替换该结点的value值），若遍历完桶仍没有找到hash值与key值和指定的hash值与key值相等的结点，则直接新生一个结点并赋值为之前最后一个结点的下一个结点。进入步骤⑥
+
+　　⑥ 若binCount值达到红黑树转化的阈值，则将桶中的结构转化为红黑树存储，最后，增加binCount的值。
+
+size计算方法：
+
+通过累加baseCount和CounterCell数组中的数量，即可得到元素的总个数
 
 ## LinkedHashMap
 
