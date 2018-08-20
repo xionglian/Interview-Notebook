@@ -29,11 +29,19 @@
 
 ### 1. Set
 
-- TreeSet：基于红黑树实现，支持有序性操作，例如根据一个范围查找元素的操作。但是查找效率不如 HashSet，HashSet 查找的时间复杂度为 O(1)，TreeSet 则为 O(logN)。
+- TreeSet：基于TreeMap(红黑树)实现，支持有序性操作，例如根据一个范围查找元素的操作。但是查找效率不如 HashSet，HashSet 查找的时间复杂度为 O(1)，TreeSet 则为 O(logN)。
 
-- HashSet：基于哈希表实现，支持快速查找，但不支持有序性操作。并且失去了元素的插入顺序信息，也就是说使用 Iterator 遍历 HashSet 得到的结果是不确定的。
+- HashSet：基于HashMap（哈希表）实现，支持快速查找，但不支持有序性操作。并且失去了元素的插入顺序信息，也就是说使用 Iterator 遍历 HashSet 得到的结果是不确定的。
 
-- LinkedHashSet：具有 HashSet 的查找效率，且内部使用双向链表维护元素的插入顺序。
+- LinkedHashSet：基于LinkedHashMap（双向链表）实现，具有 HashSet 的查找效率，且内部使用双向链表维护元素的插入顺序。
+
+**TreeSet与HashSet区别**
+
+- 有序性：TreeSet支持自然排序和定制排序。HashSet不支持排序。
+- 数据结构:TreeSet基于TreeMap的红黑树，HashSet基于HashMap的哈希表
+- 查找速度:TreeSet O(logN)，HashSet O(1)
+- key为null:TreeSet不能为null，hashSet可以为null
+- 判断元素唯一：TreeSet通过compareTo（），HashSet通过equal()和hashCode()
 
 ### 2. List
 
