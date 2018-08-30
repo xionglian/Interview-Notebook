@@ -94,6 +94,12 @@ java -Xms1M -Xmx2M HackTheJava
 
 JDK 1.7 之前，HotSpot 虚拟机把它当成永久代来进行垃圾回收。但是从 JDK 1.7 开始，已经把原本放在永久代的字符串常量池移到 Native Method 中。
 
+移除永久代的工作从JDK1.7就开始了。JDK1.7中，存储在永久代的部分数据就已经转移到了Java Heap或者是 Native Heap。但永久代仍存在于JDK1.7中，并没完全移除，譬如符号引用(Symbols)转移到了native heap；字面量(interned strings)转移到了java heap；类的静态变量(class statics)转移到了java heap
+
+元空间的本质和永久代类似，都是对JVM规范中方法区的实现。不过元空间与永久代之间最大的区别在于：元空间并不在虚拟机中，而是使用本地内存
+
+
+
 ## 运行时常量池
 
 运行时常量池是方法区的一部分。
@@ -767,9 +773,11 @@ public class FileSystemClassLoader extends ClassLoader {
 - -XX:SurvivorRatio=n:年轻代中Eden区与两个Survivor区的比值。注意Survivor区有
 两个。如：3，表示Eden：Survivor=3：2，一个Survivor区占整个年轻代的1/5
 #### 非堆设置
+**jdk1.8之前**
 - -XX:PermSize：表示非堆区初始内存分配大小
 - -XX:MaxPermSize：表示对非堆区分配的内存的最大上限
-
+**jdk1.8**
+-XX:MetaspaceSize 
 ### 栈
 - -Xss:栈大小
 
