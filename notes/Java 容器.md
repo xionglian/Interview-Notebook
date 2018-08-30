@@ -181,7 +181,7 @@ private void writeObject(java.io.ObjectOutputStream s)
     s.writeInt(size);
 
     // Write out all elements in the proper order.
-    for (int i=0; i<size; i++) {
+    for (int  i=0; i<size; i++) {
         s.writeObject(elementData[i]);
     }
 
@@ -446,7 +446,7 @@ static class Entry<K,V> implements Map.Entry<K,V> {
         value = newValue;
         return oldValue;
     }
-
+	//重写equals方法，判断两个Entry是否相等，如果两个Entry对象的key和value相等，则返回true，否则返回false
     public final boolean equals(Object o) {
         if (!(o instanceof Map.Entry))
             return false;
@@ -775,7 +775,7 @@ static final int tableSizeFor(int cap) {
 ### 8. 链表转红黑树
 
 从 JDK 1.8 开始，当table的容量大于64时，一个桶存储的链表长度大于 8 时会将链表转换为红黑树。当链表长度小于6时，变成链表。小于64只会resize一次。
-<div align="center"> <img src="../pics//249993-20170725160254943-1515467235.png" width="800"/> </div><br>
+<div align="center"> <img src="../pics//hashmap.png" width="800"/> </div><br>
 
 
 ### 9. 与 HashTable 的比较
