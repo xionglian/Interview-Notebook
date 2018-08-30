@@ -1,8 +1,8 @@
-## ZooKeeper基本介绍
+# ZooKeeper基本介绍
 
 *摘自* [https://www.cnblogs.com/sunddenly/p/4033574.html] Zookeeper简单介绍
 
-#### ZooKeeper数据模型Znode
+## ZooKeeper数据模型Znode
 
 ZooKeeper的数据模型，在结构上和标准文件系统的非常相似，都是采用这种树形层次结构，ZooKeeper树中的每个节点被称为—Znode。和文件系统的目录树一样，ZooKeeper树中的每个节点可以拥有子节点。但也有不同之处：
 <div align="center"> <img src="../pics/zookeeper/znode.png" width="400"/> </div><br>
@@ -34,25 +34,25 @@ ZooKeeper的数据模型，在结构上和标准文件系统的非常相似，�
 1. 观察
   客户端可以在节点上设置watch，我们称之为监视器。当节点状态发生改变时(Znode的增、删、改)将会触发watch所对应的操作。当watch被触发时，ZooKeeper将会向客户端发送且仅发送一条通知，因为watch只能被触发一次，这样可以减少网络流量。
 
-##### Znode属性
+#### Znode属性
 <div align="center"> <img src="../pics/zookeeper/znodeProfile.png" width="400"/> </div><br>
 
-##### Znode基本操作
+#### Znode基本操作
 <div align="center"> <img src="../pics/zookeeper/znodePdu.png" width="400"/> </div><br>
 
 - 更新ZooKeeper操作是有限制的。delete或setData必须明确要更新的Znode的版本号，我们可以调用exists找到。如果版本号不匹配，更新将会失败。
 - 更新ZooKeeper操作是非阻塞式的。因此客户端如果失去了一个更新(由于另一个进程在同时更新这个Znode)，他可以在不阻塞其他进程执行的情况下，选择重新尝试或进行其他操作。
 - 尽管ZooKeeper可以被看做是一个文件系统，但是为了便利，摒弃了一些文件系统地操作原语。因为文件非常的小并且是整体读写的，所以不需要打开、关闭或是寻地的操作。
 
-#### Watch触发器
-###### watch概述
+## Watch触发器
+#### watch概述
 
     ZooKeeper可以为所有的读操作设置watch，这些读操作包括：exists()、getChildren()及getData()。
     watch事件是一次性的触发器，当watch的对象状态发生改变时，将会触发此对象上watch所对应的事件。
     watch事件将被异步地发送给客户端，并且ZooKeeper为watch机制提供了有序的一致性保证。
     理论上，客户端接收watch事件的时间要快于其看到watch对象状态变化的时间。
 
-###### watch类型
+##### watch类型
 
 ZooKeeper所管理的watch可以分为两类：
 
@@ -70,7 +70,7 @@ ZooKeeper所管理的watch可以分为两类：
 2. 一个成功的**create**操作将触发Znode的数据watch以及孩子watch
 3. 一个成功的**delete**操作将触发Znode的数据watch以及孩子watch
 
-###### watch注册与处触发
+#### watch注册与处触发
 <div align="center"> <img src="../pics/zookeeper/watchprc.png" width="400"/> </div><br>
 
     Watch由客户端所连接的ZooKeeper服务器在本地维护，因此watch可以非常容易地设置、管理和分派。
@@ -78,7 +78,7 @@ ZooKeeper所管理的watch可以分为两类：
     另外，当从服务器断开连接的时候，watch将不会被接收。
     但是，当一个客户端重新建立连接的时候，任何先前注册过的watch都会被重新注册。
 
-#### ZooKeeper选举过程
+## ZooKeeper选举过程
 
 1. **master启动**
 在引入了Zookeeper以后我们启动了两个主节点，"主节点-A"和"主节点-B"他们启动以后，都向ZooKeeper去注册一个节点。我们假设"主节点-A"锁注册地节点是"master-00001"，"主节点-B"注册的节点是"master-00002"，注册完以后进行选举，编号最小的节点将在选举中获胜获得锁成为主节点，也就是我们的"主节点-A"将会获得锁成为主节点，然后"主节点-B"将被阻塞成为一个备用节点。那么，通过这种方式就完成了对两个Master进程的调度。
@@ -95,5 +95,3 @@ ZooKeeper所管理的watch可以分为两类：
 ## ZooKeeper安装
 安装入门：
 [官方文档地址](https://zookeeper.apache.org/doc/current/zookeeperStarted.html)
-
-###### 配置整理
