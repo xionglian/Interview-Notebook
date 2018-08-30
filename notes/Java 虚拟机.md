@@ -466,11 +466,11 @@ G1 把堆划分成多个大小相等的独立区域（Region），新生代和�
 
 包括以下 7 个阶段：
 
--  **加载（Loading）** 
--  **验证（Verification）** 
--  **准备（Preparation）** 
--  **解析（Resolution）** 
--  **初始化（Initialization）** 
+-  **加载（Loading）**
+-  **验证（Verification）**
+-  **准备（Preparation）**
+-  **解析（Resolution）**
+-  **初始化（Initialization）**
 - 使用（Using）
 - 卸载（Unloading）
 
@@ -755,7 +755,7 @@ public class FileSystemClassLoader extends ClassLoader {
 }
 ```
 
-#JVM参数与调优
+# JVM参数与调优
 
 ## 参数
 ### 堆设置
@@ -777,7 +777,7 @@ public class FileSystemClassLoader extends ClassLoader {
 - -XX:PermSize：表示非堆区初始内存分配大小
 - -XX:MaxPermSize：表示对非堆区分配的内存的最大上限
 **jdk1.8**
--XX:MetaspaceSize 
+-XX:MetaspaceSize
 ### 栈
 - -Xss:栈大小
 
