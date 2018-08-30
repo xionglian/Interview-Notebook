@@ -1,8 +1,6 @@
 ## ZooKeeper基本介绍
 
-*摘自* [https://www.cnblogs.com/sunddenly/p/4033574.html][2ff3e8d9]
-
-img[2ff3e8d9]: https://www.cnblogs.com/sunddenly/p/4033574.html "原文链接"
+*摘自* [https://www.cnblogs.com/sunddenly/p/4033574.html] Zookeeper简单介绍
 
 #### ZooKeeper数据模型Znode
 
