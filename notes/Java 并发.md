@@ -210,12 +210,42 @@ Executor 管理多个异步任务的执行，而无需程序员显式地管理�
 
 线程池之后的处理策略
 
-
-
 1. 如果当前线程池中的线程数目小于corePoolSize，则每来一个任务，就会创建一个线程去执行这个任务；
+
 2. 如果当前线程池中的线程数目>=corePoolSize，则每来一个任务，会尝试将其添加到任务缓存队列当中，若添加成功，则该任务会等待空闲线程将其取出去执行；若添加失败（一般来说是任务缓存队列已满），则会尝试创建新的线程去执行这个任务；
+
 3. 如果当前线程池中的线程数目达到maximumPoolSize，则会采取任务拒绝策略进行处理；
+
 4. 如果线程池中的线程数量大于 corePoolSize时，如果某线程空闲时间超过keepAliveTime，线程将被终止，直至线程池中的线程数目不大于corePoolSize；如果允许为核心池中的线程设置存活时间，那么核心池中的线程空闲时间超过keepAliveTime，线程也会被终止。
+
+拒绝策略
+
+- AbortPolicy 丢弃任务，抛运行时异常
+- CallerRunsPolicy 执行任务
+- DiscardPolicy 忽视，什么都不会发生
+- DiscardOldestPolicy 从队列中踢出最先进入队列（最后一个执行）的任务
+
+阻塞队列：
+
+**直接递交。**如SynchronousQueue，该策略直接将任务直接交给工作线程。如果当前没有空闲工作线程，创建新线程。这种策略最好是配合unbounded线程数来使用，从而避免任务被拒绝。但当任务生产速度大于消费速度，将导致线程数不断的增加。
+
+**无界队列**。如LinkedBlockingQueue，当工作的线程数达到核心线程数时，新的任务被放在队列上。因此，永远不会有大于corePoolSize的线程被创建，maximumPoolSize参数失效。这种策略比较适合所有的任务都不相互依赖，独立执行。但是当任务处理速度小于任务进入速度的时候会引起队列的无限膨胀。
+
+**有界队列。**如ArrayBlockingQueue，按前面描述的corePoolSize、maximumPoolSize、BlockingQueue处理逻辑处理。队列长度和maximumPoolSize两个值会相互影响：
+
+几种Executor配置：
+
+- **FixedThreadPool**：corePoolSize=maximumPoolSize=n，LinkedBlockingQueue,0s,多余的任务将存在再阻塞队列，不会由RejectedExecutionHandler处理
+- **CachedThreadPool**：corePoolSize=0，maximumPoolSize=Integer.MAX_VALUE，keepAliveTime=60s,SynchronousQueue
+- **SingleThreadExecutor：**corePoolSize=maximumPoolSize=1,LinkedBlockingQueue,0s
+
+线程池调优：
+
+- 用ThreadPoolExecutor自定义线程池，看线程是的用途，如果任务量不大，可以用无界队列，如果任务量非常大，要用有界队列，防止OOM 
+- 如果任务量很大，还要求每个任务都处理成功，要对提交的任务进行阻塞提交，重写拒绝机制，改为阻塞提交。保证不抛弃一个任务 
+- 最大线程数一般设为2N+1最好，N是CPU核数 
+- 核心线程数，看应用，如果是任务，一天跑一次，设置为0，合适，因为跑完就停掉了，如果是常用线程池，看任务量，是保留一个核心还是几个核心线程数 
+- 如果要获取任务执行结果，用CompletionService，但是注意，获取任务的结果的要重新开一个线程获取，如果在主线程获取，就要等任务都提交后才获取，就会阻塞大量任务结果，队列过大OOM，所以最好异步开个线程获取结果
 
 [asdf ](https://www.cnblogs.com/absfree/p/5357118.html）
 
