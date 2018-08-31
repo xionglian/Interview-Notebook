@@ -27,7 +27,18 @@
 
 <div align="center"> <img src="../pics//VP4n3i8m34Ntd28NQ4_0KCJ2q044Oez.png"/> </div><br>
 ## 排序
+<<<<<<< HEAD
 不论是Collections.sort方法或者是Arrays.sort方法，底层实现都是TimSort实现的
+=======
+
+不论是Collections.sort方法或者是Arrays.sort方法，底层实现都是TimSort实现的
+
+- 扫描数组，确定其中的单调上升段和严格单调下降段，将严格下降段反转；
+- 定义最小基本片段长度，短于此的单调片段通过插入排序集中为长于此的段；
+- 反复归并一些相邻片段，过程中避免归并长度相差很大的片段，直至整个排序完成，所用分段选择策略可以保证O(n log n)时间复杂性。 
+
+
+>>>>>>> c7cd396b0d4e4cd687c290057c09870eaf4ff7e0
 ### 1. Set
 
 - TreeSet：基于TreeMap(红黑树)实现，支持有序性操作，例如根据一个范围查找元素的操作。但是查找效率不如 HashSet，HashSet 查找的时间复杂度为 O(1)，TreeSet 则为 O(logN)。
