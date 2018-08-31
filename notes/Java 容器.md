@@ -28,11 +28,12 @@
 <div align="center"> <img src="../pics//VP4n3i8m34Ntd28NQ4_0KCJ2q044Oez.png"/> </div><br>
 ## 排序
 
+
 不论是Collections.sort方法或者是Arrays.sort方法，底层实现都是TimSort实现的
 
 - 扫描数组，确定其中的单调上升段和严格单调下降段，将严格下降段反转；
 - 定义最小基本片段长度，短于此的单调片段通过插入排序集中为长于此的段；
-- 反复归并一些相邻片段，过程中避免归并长度相差很大的片段，直至整个排序完成，所用分段选择策略可以保证O(n log n)时间复杂性。 
+- 反复归并一些相邻片段，过程中避免归并长度相差很大的片段，直至整个排序完成，所用分段选择策略可以保证O(n log n)时间复杂性。
 
 
 ### 1. Set
@@ -923,10 +924,10 @@ JDK 1.8 使用了 CAS 操作来支持更高的并发度，在 CAS 操作失败�
 
 并且 JDK 1.8 的实现也在链表过长时会转换为红黑树。
 
-put实现并发插入或更新操作： 
+put实现并发插入或更新操作：
 
-- 当前bucket为空时，使用CAS操作，将Node放入对应的bucket中。 
-- 出现hash冲突，则采用synchronized关键字。倘若当前hash对应的节点是链表的头节点，遍历链表，若找到对应的node节点，则修改node节点的val，否则在链表末尾添加node节点；倘若当前节点是红黑树的根节点，在树结构上遍历元素，更新或增加节点。 
+- 当前bucket为空时，使用CAS操作，将Node放入对应的bucket中。
+- 出现hash冲突，则采用synchronized关键字。倘若当前hash对应的节点是链表的头节点，遍历链表，若找到对应的node节点，则修改node节点的val，否则在链表末尾添加node节点；倘若当前节点是红黑树的根节点，在树结构上遍历元素，更新或增加节点。
 - 倘若当前map正在扩容f.hash == MOVED， 则跟其他线程一起进行扩容
 ```java
 final V putVal(K key, V value, boolean onlyIfAbsent) {
@@ -1315,4 +1316,3 @@ ListIterator <-- List
 - [HashMap 相关面试题及其解答](https://www.jianshu.com/p/75adf47958a7)
 - [Java 集合细节（二）：asList 的缺陷](http://wiki.jikexueyuan.com/project/java-enhancement/java-thirtysix.html)
 - [Java Collection Framework – The LinkedList Class](http://javaconceptoftheday.com/java-collection-framework-linkedlist-class/)
-
